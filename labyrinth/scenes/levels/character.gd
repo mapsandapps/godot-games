@@ -11,8 +11,6 @@ var is_slowing = false
 func _process(delta):
 	speed = clamp(speed + speed_delta, 0, MAX_SPEED)
 	
-	# TODO: needs to be normalized by the progress
-	#progress_ratio += delta * speed
 	progress += delta * speed
 	
 	if progress_ratio == 1:
