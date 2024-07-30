@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://bcp27wnuytim"]
 
 [ext_resource type="Texture2D" uid="uid://cysmu6bwmtotu" path="res://graphics/labyrinth0.png" id="1_063ni"]
-[ext_resource type="Script" path="res://scenes/levels/character.gd" id="2_wnyhh"]
+[ext_resource type="Script" path="res://scenes/character.gd" id="2_wnyhh"]
 [ext_resource type="Texture2D" uid="uid://d8634ui5xtsq" path="res://graphics/robot.png" id="3_kwux4"]
 [ext_resource type="Texture2D" uid="uid://csseqtak4xa6m" path="res://graphics/tap.png" id="4_vjqy7"]
-[ext_resource type="Script" path="res://scenes/levels/finger.gd" id="5_8sp5o"]
+[ext_resource type="Script" path="res://scenes/finger.gd" id="5_8sp5o"]
 
 [sub_resource type="Curve2D" id="Curve2D_ooi25"]
 _data = {
@@ -55,16 +55,13 @@ drag_bottom_margin = 0.5
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_kwux4")
 
-[node name="Finger" type="CharacterBody2D" parent="."]
-visible = false
+[node name="Finger" type="Area2D" parent="."]
 script = ExtResource("5_8sp5o")
 
-[node name="Area2D" type="Area2D" parent="Finger"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Finger/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finger"]
 shape = SubResource("CircleShape2D_fuef7")
 
-[node name="Sprite2D" type="Sprite2D" parent="Finger/Area2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Finger"]
 texture = ExtResource("4_vjqy7")
 
 [connection signal="area_entered" from="Path2D/Character/Area2D" to="Path2D/Character" method="_on_area_2d_area_entered"]
