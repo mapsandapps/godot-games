@@ -36,6 +36,7 @@ offset_bottom = 3072.0
 color = Color(0.498039, 0.623529, 0.968627, 1)
 
 [node name="Finger" parent="." instance=ExtResource("3_2o0ik")]
+visible = false
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_7vd22")
