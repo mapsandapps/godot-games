@@ -18,7 +18,9 @@ func _process(delta):
 		pass
 
 func _on_area_2d_area_entered(area):
-	speed_delta = MAX_SPEED * ACCELERATION_RATE
+	if area.is_in_group("finger"):
+		speed_delta = MAX_SPEED * ACCELERATION_RATE
 
 func _on_area_2d_area_exited(area):
-	speed_delta = MAX_SPEED * DECELERATION_RATE
+	if area.is_in_group("finger"):
+		speed_delta = MAX_SPEED * DECELERATION_RATE
