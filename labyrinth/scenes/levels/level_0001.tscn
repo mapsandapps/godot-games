@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=4 uid="uid://mohhck8wrjw2"]
+
+[ext_resource type="PackedScene" uid="uid://o0x3s1rot3tl" path="res://scenes/character.tscn" id="2_64hdb"]
+[ext_resource type="PackedScene" uid="uid://bcp27wnuytim" path="res://scenes/level.tscn" id="2_f58dc"]
+[ext_resource type="Texture2D" uid="uid://cs2ult8cmtohy" path="res://graphics/sheet@2x.png" id="4_55e3q"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uupbj"]
+texture = ExtResource("4_55e3q")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+3:3/0 = 0
+2:3/0 = 0
+1:3/0 = 0
+0:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_7vd22"]
+sources/0 = SubResource("TileSetAtlasSource_uupbj")
+
+[sub_resource type="Curve2D" id="Curve2D_ooi25"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 63, 832, -0.287449, 30.5576, 0.287449, -30.5576, 68, 635, -23.0815, 0, 23.0815, 0, 121, 587, -28.363, -0.14988, 28.363, 0.14988, 271, 586, -0.29976, 25.7793, 0.29976, -25.7793, 318, 539, -0.475497, 22.4718, 0.475497, -22.4718, 322, 381, 25.2734, 1.08536, -25.2734, -1.08536, 274, 335, 32.3301, 0.411385, -32.3301, -0.411385, 116, 332, -0.29976, 22.6318, 0.29976, -22.6318, 62, 273, -0.564404, 29.3707, 0.564404, -29.3707, 62, 124, -21.4328, 0, 21.4328, 0, 116, 76, -26.4816, -0.261505, 26.4816, 0.261505, 529, 76, -0.749399, -33.1234, 0.749399, 33.1234, 575, 126, 1.0109, -29.5495, -1.0109, 29.5495, 578, 791, 25.4796, 0, -25.4796, 0, 528, 839, 29.3676, 0.899279, -29.3676, -0.899279, 242, 839, 0, 27.428, 0, -27.428, 194, 790, -0.29976, 33.6376, 0.29976, -33.6376, 196, 509, -35.8213, 0.14988, 35.8213, -0.14988, 243, 463, -28.0538, 0.302899, 28.0538, -0.302899, 784, 466, 0.449639, -26.3788, -0.449639, 26.3788, 832, 511, 0.14988, -29.1443, -0.14988, 29.1443, 830, 667, 22.1822, -0.14988, -22.1822, 0.14988, 781, 714, 29.2209, 0.334875, -29.2209, -0.334875, 497, 714, 0.29976, 27.1282, -0.29976, -27.1282, 444, 661, 0.446719, 27.4223, -0.446719, -27.4223, 447, 252, 28.4772, 1.04916, -28.4772, -1.04916, 403, 206, 0, 0, 0, 0, 313, 203)
+}
+point_count = 28
+
+[node name="Level 0001" type="Node2D"]
+
+[node name="Level" parent="." instance=ExtResource("2_f58dc")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAEAAQAAAAAAAAAAAAMAAQAAAAAAAEAAAAUAAQAAAAAAAEAAAAcAAQAAAAAAAEAAAAkAAQAAAABAAAAAAAkAAwAAAABAAEAAAAkABQAAAABAAEAAAAkABwAAAAAAAEAAAAEAAwAAAABAAEAAAAkACQAAAABAAEAAAAkACwAAAABAAEAAAAEABQAAAADAAAAAAAkADQAAAACAAAAAAAcADQAAAAAAAEAAAAUADQAAAAAAAEAAAAMADQAAAADAAAAAAAMACwAAAABAAEAAAAMACQAAAABAAEAAAAMABwAAAAAAAAAAAAUABwAAAAAAAEAAAAsABwAAAAAAAEAAAA0ABwAAAABAAAAAAA0ACQAAAABAAEAAAA0ACwAAAACAAAAAAAsACwAAAAAAAEAAAAcACwAAAADAAAAAAAcACQAAAABAAEAAAAcABQAAAABAAEAAAAcAAwAAAABAAAAAAAUAAwAAAADAAIAAAAMABQAAAAAAAEAAAAUABQAAAABAAAAAAAUACQAAAACAAAAAAAEACQAAAAAAAAAAAAEACwAAAABAAEAAAAEADQAAAABAAIAAAAcABwAAAAAAAEAAAA=")
+tile_set = SubResource("TileSet_7vd22")
+rendering_quadrant_size = 256
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(14.2549, -0.879761)
+scale = Vector2(0.982867, 0.986752)
+curve = SubResource("Curve2D_ooi25")
+
+[node name="Character" parent="Path2D" instance=ExtResource("2_64hdb")]
+position = Vector2(63, 832)
+rotation = -1.54542
