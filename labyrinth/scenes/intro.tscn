@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvrryj20wio3e"]
+
+[ext_resource type="FontFile" uid="uid://ideq3xm18vlt" path="res://fonts/Overlock-BlackItalic.ttf" id="1_cmgwb"]
+[ext_resource type="Script" path="res://scenes/intro.gd" id="1_qqn36"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u11ta"]
+font = ExtResource("1_cmgwb")
+font_size = 90
+
+[sub_resource type="Animation" id="Animation_vpljh"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.498039, 0.623529, 0.968627, 0), Color(0.498039, 0.623529, 0.968627, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rrtku"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Overlay:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.498039, 0.623529, 0.968627, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q3kyh"]
+_data = {
+"RESET": SubResource("Animation_rrtku"),
+"fade_in": SubResource("Animation_vpljh")
+}
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qqn36")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1024.0
+offset_top = -1024.0
+offset_right = 3072.0
+offset_bottom = 3072.0
+color = Color(0.498039, 0.623529, 0.968627, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 448.0
+offset_right = 640.0
+offset_bottom = 558.0
+text = "Labyrinth"
+label_settings = SubResource("LabelSettings_u11ta")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Overlay" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 672.0
+offset_bottom = 1184.0
+color = Color(0.498039, 0.623529, 0.968627, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_q3kyh")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
