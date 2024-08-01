@@ -6,7 +6,7 @@ func hide_escalators():
 	get_tree().call_group("escalator", "hide")
 
 func _ready():
-	load_level("0002")
+	load_level("0003")
 	hide_escalators()
 	
 func unload_level():

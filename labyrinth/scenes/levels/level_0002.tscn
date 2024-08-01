@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://drwk0nych2g74"]
 
-[ext_resource type="Texture2D" uid="uid://cs2ult8cmtohy" path="res://graphics/sheet@2x.png" id="1_dyxnf"]
+[ext_resource type="Texture2D" uid="uid://cs2ult8cmtohy" path="res://graphics/white_tiles@2x.png" id="1_dyxnf"]
 [ext_resource type="PackedScene" uid="uid://o0x3s1rot3tl" path="res://scenes/character.tscn" id="2_5u0jc"]
 [ext_resource type="PackedScene" uid="uid://yynsv4lt4t1n" path="res://scenes/escalator.tscn" id="3_wmcfr"]
 
