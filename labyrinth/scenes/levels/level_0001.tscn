@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://mohhck8wrjw2"]
+[gd_scene load_steps=7 format=4 uid="uid://mohhck8wrjw2"]
 
 [ext_resource type="PackedScene" uid="uid://o0x3s1rot3tl" path="res://scenes/character.tscn" id="2_64hdb"]
-[ext_resource type="PackedScene" uid="uid://bcp27wnuytim" path="res://scenes/level.tscn" id="2_f58dc"]
 [ext_resource type="Texture2D" uid="uid://cs2ult8cmtohy" path="res://graphics/sheet@2x.png" id="4_55e3q"]
 [ext_resource type="PackedScene" uid="uid://yynsv4lt4t1n" path="res://scenes/escalator.tscn" id="4_mn5dw"]
 
@@ -36,8 +35,6 @@ point_count = 28
 
 [node name="Level 0001" type="Node2D"]
 
-[node name="Level" parent="." instance=ExtResource("2_f58dc")]
-
 [node name="Floors" type="Node" parent="."]
 
 [node name="Floor 3" type="TileMapLayer" parent="Floors"]
@@ -62,10 +59,13 @@ position = Vector2(14.2549, -0.879761)
 scale = Vector2(0.982867, 0.986752)
 curve = SubResource("Curve2D_ooi25")
 
-[node name="Character" parent="Path2D" instance=ExtResource("2_64hdb")]
-z_index = 1
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(63, 832)
 rotation = -1.54542
+
+[node name="Character" parent="Path2D/PathFollow2D" instance=ExtResource("2_64hdb")]
+z_index = 1
+scale = Vector2(1, 1)
 
 [node name="Escalators" type="Node" parent="."]
 

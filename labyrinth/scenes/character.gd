@@ -1,4 +1,4 @@
-extends PathFollow2D
+extends Area2D
 
 const MAX_SPEED = 100
 const ACCELERATION_RATE = 0.05
@@ -7,17 +7,21 @@ var speed = 0
 var speed_delta = 0
 var is_slowing = false
 
+@onready var path_follow = get_parent()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	speed = clamp(speed + speed_delta, 0, MAX_SPEED)
 	
-	progress += delta * speed
+	path_follow.progress += delta * speed
 	
-	if progress_ratio == 1:
+	if path_follow.progress_ratio == 1:
 #		# TODO: level is over!
 		pass
 
-func _on_area_2d_area_entered(area):	
+func _on_area_entered(area):
+	print(area)
+	
 	if area.is_in_group("escalator"):
 		z_index += 1
 		area.queue_free()
@@ -25,6 +29,6 @@ func _on_area_2d_area_entered(area):
 	if area.is_in_group("finger"):
 		speed_delta = MAX_SPEED * ACCELERATION_RATE
 
-func _on_area_2d_area_exited(area):
+func _on_area_exited(area):
 	if area.is_in_group("finger"):
 		speed_delta = MAX_SPEED * DECELERATION_RATE
