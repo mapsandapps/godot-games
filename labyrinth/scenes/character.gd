@@ -19,9 +19,7 @@ func _process(delta):
 #		# TODO: level is over!
 		pass
 
-func _on_area_entered(area):
-	print(area)
-	
+func _on_area_entered(area):	
 	if area.is_in_group("escalator"):
 		z_index += 1
 		area.queue_free()

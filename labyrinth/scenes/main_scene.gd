@@ -2,8 +2,12 @@ extends Node2D
 
 var level_instance: Node2D
 
+func hide_escalators():
+	get_tree().call_group("escalator", "hide")
+
 func _ready():
 	load_level("0001")
+	hide_escalators()
 	
 func unload_level():
 	if (is_instance_valid(level_instance)):
