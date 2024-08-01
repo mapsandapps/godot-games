@@ -1,6 +1,6 @@
 extends Area2D
 
-const MAX_SPEED = 100
+const MAX_SPEED = 150
 const ACCELERATION_RATE = 0.05
 const DECELERATION_RATE = -0.01
 var speed = 0

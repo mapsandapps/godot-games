@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://drwk0nych2g74"]
+[gd_scene load_steps=7 format=4 uid="uid://drwk0nych2g74"]
 
 [ext_resource type="Texture2D" uid="uid://cs2ult8cmtohy" path="res://graphics/sheet@2x.png" id="1_dyxnf"]
 [ext_resource type="PackedScene" uid="uid://o0x3s1rot3tl" path="res://scenes/character.tscn" id="2_5u0jc"]
+[ext_resource type="PackedScene" uid="uid://yynsv4lt4t1n" path="res://scenes/escalator.tscn" id="3_wmcfr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uupbj"]
 texture = ExtResource("1_dyxnf")
@@ -22,6 +23,22 @@ texture_region_size = Vector2i(128, 128)
 2:3/0 = 0
 1:3/0 = 0
 0:3/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_7vd22"]
 tile_size = Vector2i(128, 128)
@@ -29,16 +46,23 @@ sources/0 = SubResource("TileSetAtlasSource_uupbj")
 
 [sub_resource type="Curve2D" id="Curve2D_ooi25"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 571.537, 584.625, 0.317006, 31.5758, -0.317006, -31.5758, 571.537, 260.329, 32.3346, 0.315758, -32.3346, -0.315758, 506.422, 195.469, 31.7006, -0.947274, -31.7006, 0.947274, 245.959, 195.469, 0, -31.5758, 0, 31.5758, 180.843, 260.329, 0, -31.8916, 0, 31.8916, 180.843, 390.047, -33.2857, 0, 33.2857, 0, 245.959, 454.906, 0, 32.2073, 0, -32.2073, 311.075, 390.047, -32.3346, -0.631516, 32.3346, 0.631516, 376.19, 325.188, -0.951019, -30.6285, 0.951019, 30.6285, 441.306, 390.047, -0.317006, -32.2073, 0.317006, 32.2073, 441.306, 519.766, 32.6516, 0, -32.6516, 0, 376.19, 584.625, 31.7006, 0.947274, -31.7006, -0.947274, 115.728, 584.625, 0.634012, 32.5231, -0.634012, -32.5231, 50.6122, 519.766, 0.951019, 32.2073, -0.951019, -32.2073, 50.6122, 130.61, -32.6516, -0.631516, 32.6516, 0.631516, 115.728, 65.7508, 0, 0, 0, 0, 571.537, 65.7508)
+"points": PackedVector2Array(0, 0, 0, 0, 571.537, 584.625, 1.39927, 95.8209, -1.39927, -95.8209, 571.537, 390.047, 96.8993, 0.34844, -96.8993, -0.34844, 376.19, 195.469, 3.28843, -97.7088, -1.07779, 32.0243, 180.843, 390.047, -31.1337, 0.34844, 31.1337, -0.34844, 245.959, 454.906, 0, 32.0565, 0, -32.0565, 311.075, 390.047, -32.1832, -2.43908, 32.1832, 2.43908, 376.19, 325.188, -0.105, -30.6645, 0.332588, 97.1298, 441.306, 390.047, 98.5678, 0.904204, -98.5678, -0.904204, 245.959, 584.625, -0.510737, 98.1798, 0.510737, -98.1798, 50.6122, 390.047, -0.349817, 97.2285, 0.349817, -97.2285, 50.6122, 260.329, -97.599, 1.04532, 97.599, -1.04532, 245.959, 65.7508, 0, 0, 0, 0, 571.537, 65.7508)
 }
-point_count = 17
+point_count = 13
 
 [node name="Level 0002" type="Node2D"]
 
 [node name="Floors" type="Node" parent="."]
 
+[node name="Floor 2" type="TileMapLayer" parent="Floors"]
+z_index = 1
+tile_map_data = PackedByteArray("AAADAAIAAAABAAAAAAABAAEAAAAFAAEAAAACAAIAAAAAAAAAAAACAAMAAAAGAAIAAAABAAMAAAAFAAIAAAACAAQAAAAGAAMAAAADAAMAAAAHAAIAAAADAAQAAAAHAAMAAAAAAAMAAAAEAAIAAAAAAAQAAAAEAAMAAAABAAQAAAAFAAMAAAAAAAAAAAAEAAAAAAAAAAEAAAAEAAEAAAABAAAAAAAFAAAAAAAAAAIAAAABAAEAAAACAAAAAAAAAAEAAAADAAAAAAAAAAEAAAAEAAAAAAACAAIAAAA=")
+tile_set = SubResource("TileSet_7vd22")
+rendering_quadrant_size = 256
+collision_enabled = false
+
 [node name="Floor 1" type="TileMapLayer" parent="Floors"]
-tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAEAAAACAAAAAAAAAAEAAAADAAAAAAAAAAEAAAAEAAAAAAACAAIAAAADAAEAAAAAAAEAAAACAAEAAAAAAAEAAAABAAQAAAAAAAEAAAACAAQAAAAAAAEAAAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAAAAAMAAAABAAEAAAABAAIAAAABAAEAAAAEAAIAAAABAAEAAAAEAAMAAAABAAEAAAADAAMAAAABAAEAAAAEAAQAAAABAAIAAAAEAAEAAAABAAAAAAADAAIAAAABAAAAAAABAAEAAAAAAAAAAAACAAIAAAAAAAAAAAADAAQAAAACAAAAAAACAAMAAAACAAAAAAABAAMAAAADAAAAAAAAAAQAAAADAAAAAAA=")
+tile_map_data = PackedByteArray("AAACAAEAAAAFAAAAAAABAAIAAAAEAAEAAAAEAAMAAAABAAEAAAAEAAQAAAABAAIAAAADAAIAAAAGAAEAAAABAAEAAAAEAAAAAAACAAIAAAAFAAEAAAACAAMAAAACAAAAAAABAAMAAAADAAAAAAADAAEAAAAGAAAAAAAEAAEAAAAHAAAAAAAEAAIAAAAHAAEAAAA=")
 tile_set = SubResource("TileSet_7vd22")
 rendering_quadrant_size = 256
 collision_enabled = false
@@ -55,3 +79,8 @@ loop = false
 
 [node name="Character" parent="Path2D/PathFollow2D" instance=ExtResource("2_5u0jc")]
 z_index = 1
+
+[node name="Escalators" type="Node" parent="."]
+
+[node name="Escalator" parent="Escalators" groups=["escalator"] instance=ExtResource("3_wmcfr")]
+position = Vector2(256, 448)

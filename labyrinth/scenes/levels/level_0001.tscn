@@ -71,7 +71,7 @@ z_index = 1
 [node name="Escalators" type="Node" parent="."]
 
 [node name="Escalator" parent="Escalators" groups=["escalator"] instance=ExtResource("4_mn5dw")]
-position = Vector2(547, 837)
+position = Vector2(512, 832)
 
 [node name="Escalator 2" parent="Escalators" groups=["escalator"] instance=ExtResource("4_mn5dw")]
-position = Vector2(698, 456)
+position = Vector2(704, 448)
