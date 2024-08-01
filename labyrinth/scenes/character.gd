@@ -7,7 +7,7 @@ var speed = 0
 var speed_delta = 0
 var is_slowing = false
 
-@onready var path_follow = get_parent()
+@onready var path_follow: PathFollow2D = get_parent()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

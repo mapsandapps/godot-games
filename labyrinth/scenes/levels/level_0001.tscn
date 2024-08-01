@@ -65,7 +65,6 @@ rotation = -1.54542
 
 [node name="Character" parent="Path2D/PathFollow2D" instance=ExtResource("2_64hdb")]
 z_index = 1
-scale = Vector2(1, 1)
 
 [node name="Escalators" type="Node" parent="."]
 
